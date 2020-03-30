@@ -7,16 +7,21 @@ public class EmployeeWage {
     public static final int empRatePerHr=20;
     public static final int is_Part_Time=1;
     public static final int is_Full_Time=2;
+    // Variable
+    public static int empHrs = 0;
+    public static int totalEmpHrs = 0;
+    public static int totalWorkDay=0;
+    public static int totalEmpWage=0;
 
     public static void main(String arg[]) {
 
         System.out.println("WELCOME to EMPLOYEE WAGE Computation");
 
-        // Variable
-        int empHrs = 0;
-        int totalEmpHrs = 0;
-        int totalWorkDay=0;
-        int totalEmpWage=0;
+        wageComputation(); // function call
+    }
+
+    // Method to compute employee wage
+    public static void wageComputation(){
 
         while( totalWorkDay < noOfWorkDay && totalEmpHrs <= maxHrsInMonth ) {
 
