@@ -2,7 +2,8 @@
 
 public class EmployeeWage {
     // Constants
-    public static final int noOfDayInMonth=20;
+    public static final int maxHrsInMonth=100;
+    public static final int noOfWorkDay=20;
     public static final int empRatePerHr=20;
     public static final int is_Part_Time=1;
     public static final int is_Full_Time=2;
@@ -13,30 +14,29 @@ public class EmployeeWage {
 
         // Variable
         int empHrs = 0;
-        int empWage = 0;
-        int empWageForMonth=0;
+        int totalEmpHrs = 0;
+        int totalWorkDay=0;
+        int totalEmpWage=0;
 
-        for ( int day = 1; day <= noOfDayInMonth; day++ ) {
+        while( totalWorkDay < noOfWorkDay && totalEmpHrs <= maxHrsInMonth ) {
 
             int employee = (int) ((Math.random() * 10) % 3);
 
             switch (employee) {
                 case is_Part_Time:
-                    System.out.println("Part Time  ");
                     empHrs = 4;
                     break;
                 case is_Full_Time:
-                    System.out.println("Full Time ");
                     empHrs = 8;
                     break;
                 default:
-                    System.out.println("Employee is Absent ");
                     empHrs = 0;
             }
-            empWage = (empHrs * empRatePerHr);
-            empWageForMonth = (empWageForMonth+empWage);
-            System.out.println("Emp wage for day" + day + ": " + empWage);
+            totalWorkDay++;
+            totalEmpHrs = totalEmpHrs + empHrs;
+            System.out.println("Employee days:" + totalWorkDay + " Work Hours:" + totalEmpHrs);
         }
-        System.out.println("Employee Wage of Month is : " + empWageForMonth);
+    totalEmpWage = ( totalEmpHrs * empRatePerHr );
+    System.out.println("Employee Total Salary is :"+ totalEmpWage);
     }
 }
