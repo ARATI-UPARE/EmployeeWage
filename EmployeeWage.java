@@ -5,25 +5,27 @@ public class EmployeeWage {
         System.out.println("WELCOME to EMPLOYEE WAGE Computation");
         // Constants
         int empRatePerHr=20;
-        int empHrs=0;
-        // Variable
-        int empWage=0;
+        int is_Part_Time=2;
+        int is_Full_Time=1;
 
-        double employee=Math.random();
-        // employee presnt if value is greater than 0.5
-        if(employee>0.5)
-        {
-            System.out.println("Employee is Present");
-            empHrs=8;
+        // Variable
+        int empHrs=0;
+        int empWage=0;
+        // Employee check
+        double employee = (int)(( Math.random() * 10 ) % 3);
+        if ( employee == is_Part_Time ) {
+            System.out.println("Part Time  ");
+            empHrs = 4;
+        }
+        else if (employee == is_Full_Time ) {
+            System.out.println("Full Time ");
+            empHrs = 8;
+        }
+        else {
+            System.out.println("Employee is Absent ");
+            empHrs = 0;
+        }
             empWage=(empHrs*empRatePerHr);
             System.out.println("Employee Wage is "+empWage);
-        }
-        else
-        {
-            System.out.println("Employee is Absent");
-            empHrs=0;
-            empWage=(empHrs*empRatePerHr);
-            System.out.println("Employee Wage is "+empWage);
-        }
     }
 }
