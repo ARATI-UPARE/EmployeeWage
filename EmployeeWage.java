@@ -1,6 +1,13 @@
-// WAP to Calculate Daily Wage of Employee
+// WAP to Calculate Employee Wage using interface :
 
-public class EmployeeWage {
+interface EmpWageBuilder {
+
+    public void wageComputation( Companyempwage obj );
+}
+
+// Implements EmpWageBuilder interface
+
+public class EmployeeWage implements EmpWageBuilder{
     // Constant
     final int is_Part_Time = 1;
     final int is_Full_Time = 2;
