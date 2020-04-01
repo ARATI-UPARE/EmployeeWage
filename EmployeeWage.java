@@ -1,4 +1,5 @@
 // WAP to Calculate Employee Wage using interface :
+import java.util.*;
 
 interface EmpWageBuilder {
 
@@ -40,19 +41,26 @@ public class EmployeeWage implements EmpWageBuilder{
         companyEmployee.setTotalEmpWage( totalEmpHrs * companyEmployee.empRatePerHr );
         System.out.println("Employee Monthly Wage of " + companyEmployee.getCompanyName() + " is " + companyEmployee.getTotalEmpWage());
     }
+    // Main Function
+
     public static void main(String arg[]) {
+
         System.out.println("WELCOME to EMPLOYEE WAGE Computation");
+
         EmployeeWage emp = new EmployeeWage();
 
-        //Array of object of Companyempwage class
-        Companyempwage[] company = new Companyempwage[10];
-        // assign value to object of Companyempwage
-        company[0] = new Companyempwage("ThoughWorks", 40, 20, 100);
-        emp.wageComputation(company[0]);
-        company[1] = new Companyempwage("Wipro", 30, 22, 120);
-        emp.wageComputation(company[1]);
-        company[2] = new Companyempwage("Infosys", 45, 18, 90);
-        emp.wageComputation(company[2]);
+        // ArrayList of multiple companies wage
+
+        ArrayList<Companyempwage> company = new ArrayList<Companyempwage>();
+
+        company.add( new Companyempwage( "Thoughtworks", 40, 20, 100 ));
+        emp.wageComputation(company.get(0));
+
+        company.add( new Companyempwage( "Wipro", 30, 22, 120 ));
+        emp.wageComputation(company.get(1));
+
+        company.add( new Companyempwage( "Infosys", 45, 18, 90 ));
+        emp.wageComputation(company.get(2));
     }
 }
 
