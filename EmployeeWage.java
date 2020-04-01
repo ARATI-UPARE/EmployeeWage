@@ -40,14 +40,14 @@ public class EmployeeWage {
 
         System.out.println("WELCOME to EMPLOYEE WAGE Computation");
         EmployeeWage emp = new EmployeeWage();
+        int []wages=new int[3];
         // We can give input of multiple companies using object of class as follows
-        int W1=emp.wageComputation("ThoughWorks", 40, 20, 100);
-        System.out.println("Employee Monthly Wage "+W1 + " In ThoughtWorks");
-        int W2=emp.wageComputation("Wipro", 30, 22, 120);
-        System.out.println("Employee Monthly Wage "+W2+" In Wipro ");
-        int W3=emp.wageComputation("Infosys", 45, 18, 90);
-        System.out.println("Employee Monthly Wage "+W3+" In Infosys ");
-
+        wages[0]=emp.wageComputation("ThoughWorks", 40, 20, 100);
+        System.out.println("Employee Monthly Wage "+wages[0] + " In ThoughtWorks");
+        wages[1]=emp.wageComputation("Wipro", 30, 22, 120);
+        System.out.println("Employee Monthly Wage "+wages[1]+" In Wipro ");
+        wages[2]=emp.wageComputation("Infosys", 45, 18, 90);
+        System.out.println("Employee Monthly Wage "+wages[2]+" In Infosys ");
     }
 
 }
